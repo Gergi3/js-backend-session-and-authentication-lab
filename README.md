@@ -1,2 +1,1 @@
-# js-backend-session-and-authentication
- 
+# js-backend-session-and-authentication-lab
