@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon ./index.js",
     "start:cookie": "nodemon ./cookieDemo.js",
-    "start:auth": "nodemon ./authDemo.js",
+    "start:auth": "nodemon ./bcryptDemo.js",
     "start:session": "nodemon ./sessionDemo.js"
   },
   "repository": {
