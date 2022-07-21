@@ -5,7 +5,7 @@ const app = express();
 const port = 5000;
 
 const config = () => {
-    app.set('static', 'public');
+    app.use('/public', express.static('public'))
     app.use('/', router);
 }
 
