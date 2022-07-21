@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
-const jwtSecret = 'VmEfI5fHL1V0ARtamHBf';
+const secret = 'VmEfI5fHL1V0ARtamHBf';
 
-const createJwtToken = (email) => {
+const createToken = (email) => {
     const payload = {
         email
     };
@@ -12,6 +12,14 @@ const createJwtToken = (email) => {
     return jwt.sign(payload, secret, options);
 }
 
+const decodeToken = (token) => jwt.verify(token, secret, (err, decoded) => {
+    if (err) {
+        return false;
+    }
+    return decoded;
+});
+
 module.exports = {
-    createJwtToken
+    createToken,
+    decodeToken
 };

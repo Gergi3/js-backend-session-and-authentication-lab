@@ -1,6 +1,6 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
-const { createJwtToken } = require('./jwtServices');
+const jwtServices = require('./jwtServices');
 
 const saltRounds = 10;
 
@@ -34,7 +34,7 @@ const login = async (email, pass) => {
         return false;
     }
 
-    const token = createJwtToken(email);
+    const token = jwtServices.createToken(email);
     return token;
 }
 

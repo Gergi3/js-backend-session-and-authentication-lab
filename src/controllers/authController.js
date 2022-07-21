@@ -14,7 +14,6 @@ router.post('/login', async (req, res) => {
     
     if (sessionToken) {
         res.cookie('sessionToken', sessionToken);
-        console.log(sessionToken);
         res.redirect('/')
     } else {
         res.redirect('login');
@@ -36,5 +35,9 @@ router.post('/register', (req, res) => {
     }
 });
 
+router.get('/logout', (req, res) => {
+    res.clearCookie('sessionToken');
+    res.redirect('/');
+})
 
 module.exports = router;
